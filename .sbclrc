@@ -1,0 +1,9 @@
+(require 'asdf)
+(pushnew #P"/home/carlo/work/opt-lisp-r500/" asdf:*central-registry* :test #'equal)
+(push #P"/home/carlo/work/opt-lisp-r500/" asdf:*central-registry*)
+
+(setf (logical-pathname-translations "SYS")
+    '(("SYS:SRC;**;*.*.*" #p"/opt/sbcl-1.0.51-src/src/**/*.*")
+          ("SYS:CONTRIB;**;*.*.*" #p"/opt/sbcl-1.0.51-src/**/*.*")))
+ 
+

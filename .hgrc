@@ -1,0 +1,41 @@
+[ui]
+username = Carlo Hamalainen <carlo.hamalainen@gmail.com>
+editor = vim
+ui.merge = kdiff3
+
+[extensions]
+hgext.bookmarks =
+hggit = 
+
+hgext.extdiff =
+hgext.churn=
+extdiff =
+#hgext.convert=
+#hgext.mq=
+hgk=
+hgext.mq=
+# http://mercurial.selenic.com/wiki/ColorExtension
+color=
+# http://mercurial.selenic.com/wiki/HighlightExtension
+hgext.highlight=
+# http://mercurial.selenic.com/wiki/PagerExtension
+pager=
+
+[pager]
+pager = LESS='iMqRFX' /usr/bin/less
+
+#[hgk]
+#path=/usr/share/mercurial/hgk
+
+[extdiff]
+cmd.cdiff = colordiff
+opts.cdiff = -uprN
+cmd.kdiff3 =
+
+[defaults]
+# suppress noisy extdiff header message
+cdiff = -q
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+
