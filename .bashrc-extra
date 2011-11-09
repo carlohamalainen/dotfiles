@@ -1,0 +1,9 @@
+#!/bin/bash
+
+alias d='ls -lh'
+
+# All history forever!
+export HISTSIZE=20000
+shopt -s histappend
+export HISTTIMEFORMAT="%F %T "
+export PROMPT_COMMAND='history -a'
