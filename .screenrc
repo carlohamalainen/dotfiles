@@ -1,0 +1,20 @@
+escape ^]]
+
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+#bindkey -k k2 next
+#bindkey -k k1 prev
+
+# for shift UP and DOWN arrows
+#bindkey ^[[1;5A prev
+#bindkey ^[[1;5B next
+
+# for ctrl right and left arrows
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
+
+# for shift right and left arrows
+#bindkey ^[[1;2D prev
+#bindkey ^[[1;2C next
+
+
