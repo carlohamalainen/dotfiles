@@ -3,6 +3,8 @@
 alias ls='ls --color=auto'
 alias d='ls -lh'
 
+export EDITOR=vim
+
 # All history forever!
 export HISTSIZE=20000
 shopt -s histappend
