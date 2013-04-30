@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Command Line Magic @climagic
+# Adjust all rsync processes on the system so that they have lower (idle) IO priority.
+
+pgrep rsync | xargs ionice -c3 -p 

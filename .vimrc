@@ -41,3 +41,7 @@ map <F8> :w
 " to a post by Bram Moolenaar who recommended
 set synmaxcol=40000
 
+" blah: map <F9> :!latex % && dvips %:r.dvi -o %:r.ps<CR>
+map <F9> :!pdflatex % <CR>
+" map <F9> :!rubber --pdf -o natbib %:r <CR>
+
