@@ -12,4 +12,4 @@ main = do
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
         } `additionalKeys`
         [ ((controlMask, xK_F11), spawn "mate-terminal")
-        , ((controlMask, xK_F12), spawn "/home/carlo/opt/firefox-latest") ]
+        , ((controlMask, xK_F12), spawn "/opt/firefox/firefox") ]
