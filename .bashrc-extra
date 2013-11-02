@@ -11,6 +11,11 @@ shopt -s histappend
 export HISTTIMEFORMAT="%F %T "
 export PROMPT_COMMAND='history -a'
 
+# Bash completion
+if [ -f /etc/bash_completion ]; then
+. /etc/bash_completion
+fi
+
 # Heaps of colours, copied from http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 
 # Reset
