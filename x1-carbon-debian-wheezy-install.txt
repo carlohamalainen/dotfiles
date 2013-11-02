@@ -26,7 +26,7 @@ wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | s
 
 # Commonly used packages.
 sudo apt-get update
-sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape
+sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape mpop
 
 sudo adduser carlo vboxusers
 
