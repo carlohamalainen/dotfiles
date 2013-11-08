@@ -26,7 +26,7 @@ wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | s
 
 # Commonly used packages.
 sudo apt-get update
-sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape mpop
+sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape mpop flac moreutils xchat-gnome tcl-tclreadline genisoimage
 
 sudo adduser carlo vboxusers
 
@@ -141,8 +141,15 @@ dpkg -i linux-image-3.11.6_3.11.6-10.00.Custom_amd64.deb
 #####################
 
 ## minc toolkit
-# git clone FIXME
+# https://github.com/BIC-MNI/minc-toolkit
 sudo apt-get install cmake cmake-curses-gui
+sudo apt-get install \
+             build-essential g++ \
+             cmake cmake-curses-gui \
+             bison flex \
+             freeglut3 freeglut3-dev \
+             libxi6 libxi-dev libxmu6 libxmu-dev libxmu-headers
+git clone --recursive git://github.com/BIC-MNI/minc-toolkit.git minc-toolkit
 cd minc-toolkit
 rm -fr build
 mkdir build

@@ -8,6 +8,8 @@ set incsearch
 set visualbell
 set autoindent
 
+iab malmo Malmö
+iab Malmo Malmö
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
