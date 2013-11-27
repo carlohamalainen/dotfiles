@@ -1,7 +1,12 @@
 #!/bin/bash
 
+alias tm='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/marble.sh; echo "tray and marble"'
+alias tu='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/unmarble.sh; echo "tray and unmarble"'
+
 alias ls='ls --color=auto'
 alias d='ls -lh'
+
+alias f='find . -iname '
 
 export EDITOR=vim
 
