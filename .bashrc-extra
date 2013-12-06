@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:$HOME/work/github/dotfiles/bin
+
 alias tm='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/marble.sh; echo "tray and marble"'
 alias tu='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/unmarble.sh; echo "tray and unmarble"'
 
