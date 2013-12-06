@@ -47,3 +47,20 @@ set synmaxcol=40000
 map <F9> :!pdflatex % <CR>
 " map <F9> :!rubber --pdf -o natbib %:r <CR>
 
+
+" For Haskell stuff: pathogen for modules, e.g. hdevtools, syntastic.
+" https://github.com/tpope/vim-pathogen/
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+" hdevtools
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+
+" Use pyflakes
+let g:syntastic_python_checkers = ['pyflakes']
+
+" Change the highlighting of errrors and warning in Syntastic
+highlight SyntasticError   ctermfg=red
+highlight SyntasticWarning ctermbg=lightgrey
