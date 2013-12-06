@@ -51,7 +51,7 @@ sudo dpkg -i Downloads/skype-debian_4.2.0.11-1_i386.deb
 sudo apt-get -f install
 
 # Skype headset configuration. Start a test call, set
-# recording and output of the Skype application (in pavucontrol) 
+# recording and output of the Skype application (in pavucontrol)
 # to the Plantronics headset.
 pavucontrol &
 skype &
@@ -61,7 +61,7 @@ sudo apt-get install ia32-libs-gtk # otherwise errors about xul library
 ~/opt/thunderbird-24.1.0/thunderbird
 
 # Why I can't change this setting, I have no idea:
-# 
+#
 #     $ grep firefox .thunderbird/l3fwjt8m.default/*js
 #     user_pref("network.protocol-handler.app.ftp", "/opt/firefox/firefox");
 #     user_pref("network.protocol-handler.app.http", "/opt/firefox/firefox");
@@ -163,7 +163,7 @@ ccmake ..  # hit 'c'
            # go down to MT_BUILD_SHARED_LIBS, hit enter to turn 'ON'
            # hit 'c'
            # hit 'g'
-           # 
+           #
 make
 sudo make install
 
@@ -184,4 +184,17 @@ sudo rm -fr build && sudo python setup.py install
 wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 sudo python get-pip.py
 sudo pip install youtube-dl
+
+sudo pip install pyflakes
+
+# MATE desktop
+
+Add to /etc/apt/sources.list:
+
+deb http://repo.mate-desktop.org/debian wheezy main
+
+sudo apt-get update
+sudo apt-get --yes --quiet --allow-unauthenticated install mate-archive-keyring
+sudo apt-get update
+sudo apt-get install mate-desktop-environment-extra
 
