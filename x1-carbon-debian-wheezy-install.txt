@@ -27,7 +27,7 @@ wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | s
 
 # Commonly used packages.
 sudo apt-get update
-sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape mpop flac moreutils xchat-gnome tcl-tclreadline genisoimage gitk rdiff-backup unrar ffmpeg wmctrl
+sudo apt-get install unison2.32.52-gtk meld vim-gtk build-essential git colordiff ghc rsync sshfs xinput virtualbox-4.3 ipython python-nose python-networkx python-setuptools python-numpy python-scipy graphviz ecryptfs-utils cryptsetup pavucontrol screen durep baobab keepassx xinput htop transmission-gtk gnupg vlc mplayer gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-fluendo-mp3 gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs tcsh inkscape mpop flac moreutils xchat-gnome tcl-tclreadline genisoimage gitk rdiff-backup unrar ffmpeg wmctrl exiftags
 
 sudo apt-get install deb-multimedia-keyring
 sudo apt-get update
@@ -197,4 +197,40 @@ sudo apt-get update
 sudo apt-get --yes --quiet --allow-unauthenticated install mate-archive-keyring
 sudo apt-get update
 sudo apt-get install mate-desktop-environment-extra
+
+
+# VIM stuff for development
+
+# If necessary, blow away the contents of ~/.vim/
+
+# Pathogen (for vim modules):
+# https://github.com/tpope/vim-pathogen/
+mkdir -p ~/.vim/autoload ~/.vim/bundle;
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+# ensure these lines are in ~/.vimrc:
+#     execute pathogen#infect()
+#     syntax on
+#     filetype plugin indent on
+
+# Syntastic
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/syntastic.git
+cd ~
+
+# vimproc (prerequisite for ghc-mod)
+git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
+cd ~/.vim/bundle/vimproc.vim
+make
+cd ~
+
+# ghc-mod and ghcmod-vim
+cabal update
+cabal install ghc-mod
+cd ~/.vim/bundle/
+git clone https://github.com/eagletmt/ghcmod-vim.git
+cd ~
+
+
+
+
 

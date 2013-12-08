@@ -48,19 +48,26 @@ map <F9> :!pdflatex % <CR>
 " map <F9> :!rubber --pdf -o natbib %:r <CR>
 
 
-" For Haskell stuff: pathogen for modules, e.g. hdevtools, syntastic.
+" For Haskell stuff: pathogen for modules, e.g. syntastic, ghcmod-vim, ...
 " https://github.com/tpope/vim-pathogen/
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
 " hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+" au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+" au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
-" Use pyflakes
+" Tell syntastic to pyflakes for Python files.
 let g:syntastic_python_checkers = ['pyflakes']
 
-" Change the highlighting of errrors and warning in Syntastic
+" Check with syntastic on open.
+let g:syntastic_check_on_open=1
+
+" Nicer colours for errors and warnings (in an xterm).
 highlight SyntasticError   ctermfg=red
 highlight SyntasticWarning ctermbg=lightgrey
+
+au FileType haskell nnoremap <buffer> <F1> :GhcModType<CR>
+au FileType haskell nnoremap <buffer> <F2> :GhcModInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
