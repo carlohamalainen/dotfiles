@@ -222,13 +222,17 @@ Install a newer cabal binary:
     echo 'export PATH=$HOME/.cabal/bin:$PATH' >> ~/.bashrc
 
     cabal update
-    cabal install --haddock-hyperlink-source cabal-install
-    cabal update
 
 Some of the cabal defaults are [inappropriate](http://www.vex.net/~trebla/haskell/cabal-cabal.xhtml).
 
     sed -i 's/-- documentation: False/documentation: True/g'         ~/.cabal/config
     sed -i 's/-- library-profiling: False/library-profiling: True/g' ~/.cabal/config
+
+Now install the latest cabal:
+
+    cabal install --haddock-hyperlink-source cabal-install
+    cabal update
+
 
 When running cabal install, *always* add the --haddock-hyperlink-source option:
 
