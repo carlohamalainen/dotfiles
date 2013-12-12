@@ -26,7 +26,7 @@ Edit /etc/apt/sources.list as follows:
     deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
     deb http://security.debian.org/ wheezy/updates main contrib non-free
     deb http://download.virtualbox.org/virtualbox/debian wheezy contrib
-    deb http://www.deb-multimedia.org wheezy main non-free 
+    deb http://www.deb-multimedia.org wheezy main non-free
     deb http://repo.mate-desktop.org/debian wheezy main
 
     deb-src http://ftp.se.debian.org/debian stable main contrib non-free
@@ -41,7 +41,7 @@ Update:
 
     wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
     sudo apt-get update
-    sudo apt-get install virtualbox-4.3 
+    sudo apt-get install virtualbox-4.3
 
     sudo adduser carlo vboxusers # log out and log back in
 
@@ -235,7 +235,63 @@ When running cabal install, *always* add the --haddock-hyperlink-source option:
     cabal install --haddock-hyperlink-source
 
 Apparently this is a known issue, has been open for two years: [https://github.com/haskell/cabal/issues/931](https://github.com/haskell/cabal/issues/931).
-I guess everyone else is using online documentation only?
+I guess everyone else is using online documentation only? Handy:
+
+    alias ci='cabal install --haddock-hyperlink-source'
+
+## My Haskell stuff
+
+### Checker
+
+    cd ~/work/github/checker
+    ci
+    cd
+
+### Camera scripts
+
+    cd ~/work/github/camera-scripts
+    ci
+    cd
+
+## Haskell and Vim integration
+
+See [https://github.com/carlohamalainen/dotfiles/blob/master/.vimrc](vimrc) for details on making all these plugins work.
+
+### Tools
+
+    ci hoogle ghc-mod hdevtools
+
+### Pathogen (for ease of installing Vim modules):
+
+    mkdir -p ~/.vim/autoload ~/.vim/bundle;
+    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+Ensure that these lines are in ~/.vimrc:
+
+    execute pathogen#infect()
+    syntax on
+    filetype plugin indent on
+
+### Syntastic
+
+    cd ~/.vim/bundle
+    git clone https://github.com/scrooloose/syntastic.git
+    cd ~
+
+### vimproc
+
+Prerequisite for ghc-mod:
+
+    git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
+    cd ~/.vim/bundle/vimproc.vim
+    make
+    cd
+
+### ghcmod-vim
+
+    cd ~/.vim/bundle/
+    git clone https://github.com/eagletmt/ghcmod-vim.git
+    cd
 
 # TODO
 
@@ -300,32 +356,9 @@ I guess everyone else is using online documentation only?
 
     # If necessary, blow away the contents of ~/.vim/
 
-    # Pathogen (for vim modules):
-    # https://github.com/tpope/vim-pathogen/
-    mkdir -p ~/.vim/autoload ~/.vim/bundle;
-    curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-    # ensure these lines are in ~/.vimrc:
-    #     execute pathogen#infect()
-    #     syntax on
-    #     filetype plugin indent on
 
-    # Syntastic
-    cd ~/.vim/bundle
-    git clone https://github.com/scrooloose/syntastic.git
-    cd ~
 
-    # vimproc (prerequisite for ghc-mod)
-    git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
-    cd ~/.vim/bundle/vimproc.vim
-    make
-    cd ~
 
-    # ghc-mod and ghcmod-vim
-    cabal update
-    cabal install ghc-mod
-    cd ~/.vim/bundle/
-    git clone https://github.com/eagletmt/ghcmod-vim.git
-    cd ~
 
 
 
