@@ -264,6 +264,7 @@ See [https://github.com/carlohamalainen/dotfiles/blob/master/.vimrc](vimrc) for 
 ### Tools
 
     ci hoogle ghc-mod hdevtools
+    hoogle data
 
 ### Pathogen (for ease of installing Vim modules):
 
@@ -293,11 +294,25 @@ Prerequisite for ghc-mod:
 
 ### ghcmod-vim
 
+Install ghcmod-vim:
+
     cd ~/.vim/bundle/
     git clone https://github.com/eagletmt/ghcmod-vim.git
     cd
 
+Add a symlink so that it works with .lhs files as well:
+
+    cd ~/.vim/bundle/ghcmod-vim/after/ftplugin
+    ln -s haskell/ lhaskell
+    cd
+
 # TODO
+
+* https://github.com/ujihisa/neco-ghc
+* http://majutsushi.github.com/tagbar  combined with https://github.com/bitc/lushtags
+* https://github.com/Shougo/neocomplcache.vim
+
+# TODO - the rest
 
     # XMonad
     sudo apt-get install libxrandr-dev trayer
