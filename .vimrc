@@ -44,8 +44,9 @@ map <F8> :w
 set synmaxcol=40000
 
 " blah: map <F9> :!latex % && dvips %:r.dvi -o %:r.ps<CR>
-map <F9> :!pdflatex % <CR>
+" map <F9> :!pdflatex % <CR>
 " map <F9> :!rubber --pdf -o natbib %:r <CR>
+map <F9> :!./go <CR>
 
 
 " For Haskell stuff: pathogen for modules, e.g. syntastic, ghcmod-vim, ...
@@ -71,3 +72,8 @@ highlight SyntasticWarning ctermbg=lightgrey
 au FileType haskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
+
+au FileType lhaskell nnoremap <buffer> <F1> :GhcModType<CR>
+au FileType lhaskell nnoremap <buffer> <F2> :GhcModInfo<CR>
+au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
+
