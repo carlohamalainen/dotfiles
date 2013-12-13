@@ -72,6 +72,12 @@ Update:
     # Google chrome, manual download.
     sudo dpkg -i Downloads/google-chrome-stable_current_amd64.deb
 
+## Source nice shell stuff
+
+Add to .bashrc:
+
+    . $HOME/work/github/dotfiles/.bashrc-extra
+    . $HOME/work/private-dotfiles/bash-extra
 
 ## Encrypt home directory
 
@@ -306,11 +312,40 @@ Add a symlink so that it works with .lhs files as well:
     ln -s haskell/ lhaskell
     cd
 
-# TODO
+## TODO
 
 * https://github.com/ujihisa/neco-ghc
 * http://majutsushi.github.com/tagbar  combined with https://github.com/bitc/lushtags
 * https://github.com/Shougo/neocomplcache.vim
+
+## MINC/Nipype
+
+### Minc toolkit
+
+    sudo apt-get install cmake cmake-curses-gui
+    sudo apt-get install \
+                 build-essential g++ \
+                 cmake cmake-curses-gui \
+                 bison flex \
+                 freeglut3 freeglut3-dev \
+                 libxi6 libxi-dev libxmu6 libxmu-dev libxmu-headers
+
+    git clone --recursive git://github.com/BIC-MNI/minc-toolkit.git minc-toolkit
+    cd minc-toolkit
+    rm -fr build
+    mkdir build
+    cd build
+
+    ccmake ..  # hit 'c'
+               # go down to MT_BUILD_SHARED_LIBS, hit enter to turn 'ON'
+               # hit 'c'
+               # hit 'g'
+               #
+    make &> make.log   # check the log!
+    sudo make install
+
+
+
 
 # TODO - the rest
 
@@ -334,27 +369,6 @@ Add a symlink so that it works with .lhs files as well:
 
     #####################
 
-    ## minc toolkit
-    # https://github.com/BIC-MNI/minc-toolkit
-    sudo apt-get install cmake cmake-curses-gui
-    sudo apt-get install \
-                 build-essential g++ \
-                 cmake cmake-curses-gui \
-                 bison flex \
-                 freeglut3 freeglut3-dev \
-                 libxi6 libxi-dev libxmu6 libxmu-dev libxmu-headers
-    git clone --recursive git://github.com/BIC-MNI/minc-toolkit.git minc-toolkit
-    cd minc-toolkit
-    rm -fr build
-    mkdir build
-    cd build
-    ccmake ..  # hit 'c'
-               # go down to MT_BUILD_SHARED_LIBS, hit enter to turn 'ON'
-               # hit 'c'
-               # hit 'g'
-               #
-    make
-    sudo make install
 
 
     ## pyminc
@@ -367,19 +381,4 @@ Add a symlink so that it works with .lhs files as well:
     sudo pip install traits traitsui
     cd nipype
     sudo rm -fr build && sudo python setup.py install
-
-
-
-
-    # VIM stuff for development
-
-    # If necessary, blow away the contents of ~/.vim/
-
-
-
-
-
-
-
-
 
