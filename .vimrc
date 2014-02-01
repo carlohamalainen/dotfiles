@@ -11,6 +11,9 @@ set autoindent
 iab malmo Malmö
 iab Malmo Malmö
 
+iab pp <p>
+iab cpp </p>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
 " show matching bracket
@@ -38,7 +41,7 @@ set tw=0
 
 " Map F8 to write the file.
 map <F8> :w
-	
+
 " Sometimes long lines stuff up syntax highlighting. Andrej Panjkov pointed me
 " to a post by Bram Moolenaar who recommended
 set synmaxcol=40000
@@ -69,6 +72,12 @@ let g:syntastic_check_on_open=1
 highlight SyntasticError   ctermfg=red
 highlight SyntasticWarning ctermbg=lightgrey
 
+au FileType haskell nnoremap <buffer> <F4> :GhcImportedFromOpenHaddock<CR>
+au FileType lhaskell nnoremap <buffer> <F4> :GhcImportedFromOpenHaddock<CR>
+
+au FileType haskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
+au FileType lhaskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
+
 au FileType haskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
@@ -77,3 +86,7 @@ au FileType lhaskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType lhaskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 
+" let g:ghcmod_browser = '/usr/bin/iceweasel'
+
+" let g:ghcimportedfrom_ghc_options    = ['-global']
+" let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db /home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']

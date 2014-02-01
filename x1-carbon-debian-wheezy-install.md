@@ -58,7 +58,10 @@ Update:
                          gstreamer0.10-ffmpeg calibre conky-all gqview libjpeg-progs           \
                          tcsh inkscape mpop flac moreutils xchat-gnome tcl-tclreadline         \
                          genisoimage gitk rdiff-backup unrar ffmpeg wmctrl exiftags            \
-                         iotop gtkvncviewer mencoder
+                         iotop gtkvncviewer mencoder audacity pdftk                            \
+                         kino vorbis-tools ffmpeg2theora iftop pdf2djvu cpphs parted           \
+                         libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
+                         liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform haskell-platform-doc
 
