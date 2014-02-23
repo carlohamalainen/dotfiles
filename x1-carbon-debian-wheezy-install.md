@@ -61,7 +61,9 @@ Update:
                          iotop gtkvncviewer mencoder audacity pdftk                            \
                          kino vorbis-tools ffmpeg2theora iftop pdf2djvu cpphs parted           \
                          libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
-                         liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep
+                         liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep   \
+                         libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
+                         libhdf5-serial-dev
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform haskell-platform-doc
 
@@ -322,6 +324,10 @@ Add a symlink so that it works with .lhs files as well:
 * https://github.com/Shougo/neocomplcache.vim
 
 ## MINC/Nipype
+
+### volgenmodel...
+
+    sudo apt-get install octave
 
 ### Minc toolkit
 
