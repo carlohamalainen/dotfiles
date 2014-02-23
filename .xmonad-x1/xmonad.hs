@@ -2,7 +2,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig(additionalKeys, removeKeysP)
 import System.IO
 
 {-
@@ -19,6 +19,7 @@ main = do
         ]
 -}
 
+main :: IO ()
 main = do
     xmproc <- spawnPipe "/home/carlo/.cabal/bin/xmobar /home/carlo/.xmobarrc"
     xmonad $ defaultConfig
@@ -34,4 +35,5 @@ main = do
         , ((controlMask, xK_F10), spawn "/home/carlo/opt/thunderbird-24.1.0/thunderbird")
         , ((controlMask, xK_F11), spawn "gnome-terminal")
         , ((controlMask, xK_F12), spawn "/usr/bin/google-chrome")
-        ]
+        ] `removeKeysP`
+        [ "M-e" ]
