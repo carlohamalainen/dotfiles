@@ -138,3 +138,26 @@ else \
   echo " '$Black$PathShort$Color_Off' \$ "; \
 fi)'
 
+
+
+# Coloured man pages.
+# https://lists.samba.org/archive/linux/2014-February/032873.html
+# http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;38;5;74m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;38;5;246m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[04;38;5;146m") \
+            man "$@"
+}
+
+
+
+# http://ro-che.info/articles/2014-03-05-cabal-sandbox-tips.html
+. ~/work/github/ghc_sandbox/ghc_sandbox.sh
+
+# export PATH=$PATH:$HOME/work/sandboxes/idris/.cabal-sandbox/bin/
