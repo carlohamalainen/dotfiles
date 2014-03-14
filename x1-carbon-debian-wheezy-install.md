@@ -63,7 +63,7 @@ Update:
                          libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
                          liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep   \
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
-                         libhdf5-serial-dev
+                         libhdf5-serial-dev btrfs-tools
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform haskell-platform-doc
 
@@ -164,6 +164,7 @@ Reboot, check that the built-in webcam works.
     sudo pip install youtube-dl
     sudo pip install pyflakes
     sudo pip install markdown
+    sudo pip install jinja2 tornado # for latest ipython
 
 ## MATE desktop
 
