@@ -87,6 +87,7 @@ au FileType lhaskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 
 " let g:ghcmod_browser = '/usr/bin/iceweasel'
+let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 
 " let g:ghcimportedfrom_ghc_options    = ['-global']
 " let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db /home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']
