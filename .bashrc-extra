@@ -6,6 +6,7 @@ export PATH=$PATH:$HOME/work/github/dotfiles/bin
 export PATH=$PATH:/scratch/minc-widgets/mincbigaverage:/scratch/minc-widgets/mincnorm:/scratch/minc-widgets/volflip:/scratch/minc-widgets/nlpfit:/scratch/minc-widgets/xfmflip:/scratch/minc-widgets/volsymm:/scratch/minc-widgets/volalign:/scratch/minc-widgets/volcentre:/scratch/minc-widgets/xfmavg
 
 alias a='ack-grep --pager="less -R" --color-match=red --color-lineno=black --color-filename=yellow'
+alias m='mplayer'
 
 alias cdchecker='cd /home/carlo/work/github/checker'
 alias cdcliyesod='cd /home/carlo/work/github/cli-yesod-blog/blog/'
