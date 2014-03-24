@@ -91,3 +91,10 @@ let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 
 " let g:ghcimportedfrom_ghc_options    = ['-global']
 " let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db /home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']
+
+
+" autocmd BufWritePost *.hs  GhcModCheckAndLintAsync
+" autocmd BufWritePost *.lhs GhcModCheckAndLintAsync
+autocmd BufWritePost *.hs  GhcModCheckAsync
+autocmd BufWritePost *.lhs GhcModCheckAsync
+
