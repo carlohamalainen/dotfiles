@@ -161,4 +161,4 @@ man() {
 # http://ro-che.info/articles/2014-03-05-cabal-sandbox-tips.html
 . ~/work/github/ghc_sandbox/ghc_sandbox.sh
 
-# export PATH=$PATH:$HOME/work/sandboxes/idris/.cabal-sandbox/bin/
+export PATH=$PATH:$HOME/opt/idris/Idris-dev/.cabal-sandbox/bin/

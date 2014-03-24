@@ -33,7 +33,7 @@ main = do
         } `additionalKeys`
         [ ((controlMask, xK_F9), spawn "nautilus")
         , ((controlMask, xK_F10), spawn "/home/carlo/opt/thunderbird-24.1.0/thunderbird")
-        , ((controlMask, xK_F11), spawn "gnome-terminal")
+        , ((controlMask, xK_F11), spawn "mate-terminal")
         , ((controlMask, xK_F12), spawn "/usr/bin/google-chrome")
         ] `removeKeysP`
         [ "M-e" ]

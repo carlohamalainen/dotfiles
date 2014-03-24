@@ -64,7 +64,7 @@ Update:
                          libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
                          liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep   \
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
-                         libhdf5-serial-dev btrfs-tools
+                         libhdf5-serial-dev btrfs-tools emacs24
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform haskell-platform-doc
 
@@ -167,7 +167,7 @@ the uvc video things turned on:
     make oldconfig
     make-kpkg --rootcmd fakeroot --config menuconfig --initrd --us --uc -j 4 kernel_image
     cd ..
-    dpkg -i FIXME ........ linux-image-3.13.7_3.11.6-10.00.Custom_amd64.deb
+    dpkg -i linux-image-3.13.7_3.13.7-10.00.Custom_amd64.deb
 
 Reboot, check that the built-in webcam works.
 
