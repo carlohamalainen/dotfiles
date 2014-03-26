@@ -8,6 +8,8 @@ export PATH=$PATH:/scratch/minc-widgets/mincbigaverage:/scratch/minc-widgets/min
 alias a='ack-grep --pager="less -R" --color-match=red --color-lineno=black --color-filename=yellow'
 alias m='mplayer'
 
+alias skype='PULSE_LATENCY_MSEC=30 skype'
+
 alias cdchecker='cd /home/carlo/work/github/checker'
 alias cdcliyesod='cd /home/carlo/work/github/cli-yesod-blog/blog/'
 alias cdghcimportedfrom='cd /home/carlo/work/github/ghc-imported-from/'
