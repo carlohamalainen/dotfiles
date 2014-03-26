@@ -100,6 +100,7 @@ Manualy download, then:
     sudo apt-get update
     sudo dpkg -i skype-debian_4.2.0.11-1_i386.deb
     sudo apt-get -f install
+    sudo apt-get install libpulse0:i386
 
 To configure the headset, first start skype and pavucontrol:
 
