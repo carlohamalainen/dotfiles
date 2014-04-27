@@ -64,9 +64,13 @@ Update:
                          libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
                          liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep   \
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
-                         libhdf5-serial-dev btrfs-tools emacs24
+                         libhdf5-serial-dev btrfs-tools emacs24 beep openjdk-7-jdk autoconf    \
+                         python-appindicator libappindicator3-1 libappindicator3-dev           \
+                         gir1.2-appindicator3-0.1
 
-    sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform haskell-platform-doc
+    sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform \
+                         haskell-platform-doc libghc-mtl-prof libghc-primitive-prof \
+                         libghc-random-prof
 
     sudo apt-get install deb-multimedia-keyring
     sudo apt-get update
@@ -277,6 +281,12 @@ I guess everyone else is using online documentation only? Handy:
     cd ~/work/github/camera-scripts
     ci
     cd
+
+## Haskell other
+
+Need ```ghci-ng``` to get haskell-mode to work:
+
+    ci ghci-ng
 
 ## Haskell and Vim integration
 
