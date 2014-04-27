@@ -98,3 +98,8 @@ let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 autocmd BufWritePost *.hs  GhcModCheckAsync
 autocmd BufWritePost *.lhs GhcModCheckAsync
 
+"if has('gui_running')
+"    syntax enable
+"    set background=dark
+"    colorscheme solarized
+"endif
