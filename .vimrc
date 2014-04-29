@@ -78,6 +78,12 @@ au FileType lhaskell nnoremap <buffer> <F4> :GhcImportedFromOpenHaddock<CR>
 au FileType haskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
 au FileType lhaskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
 
+au FileType haskell  vnoremap <S-F4> :<C-u> :GhcImportedFromOpenHaddockVismode<CR>
+au FileType lhaskell vnoremap <S-F4> :<C-u> :GhcImportedFromOpenHaddockVismode<CR>
+
+au FileType haskell  vnoremap <S-F5> :<C-u> :GhcImportedFromEchoUrlVismode<CR>
+au FileType lhaskell vnoremap <S-F5> :<C-u> :GhcImportedFromEchoUrlVismode<CR>
+
 au FileType haskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
