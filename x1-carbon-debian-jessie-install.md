@@ -66,7 +66,7 @@ Update:
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
                          libhdf5-serial-dev btrfs-tools emacs24 beep openjdk-7-jdk autoconf    \
                          python-appindicator libappindicator3-1 libappindicator3-dev           \
-                         gir1.2-appindicator3-0.1
+                         gir1.2-appindicator3-0.1 llvm libgc-dev
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform \
                          haskell-platform-doc libghc-mtl-prof libghc-primitive-prof \
