@@ -22,6 +22,7 @@ main = do
 main :: IO ()
 main = do
     xmproc <- spawnPipe "/home/carlo/.cabal/bin/xmobar /home/carlo/.xmobarrc"
+    spawn "/home/carlo/work/github/dotfiles/bin/tray_and_gnome_session.sh"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig

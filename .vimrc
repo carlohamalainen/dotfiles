@@ -95,17 +95,39 @@ au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 " let g:ghcmod_browser = '/usr/bin/iceweasel'
 let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 
-" let g:ghcimportedfrom_ghc_options    = ['-global']
-" let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db /home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']
-
+" let g:ghcimportedfrom_ghc_options    = ['-blap']
+" let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db=/home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']
 
 " autocmd BufWritePost *.hs  GhcModCheckAndLintAsync
 " autocmd BufWritePost *.lhs GhcModCheckAndLintAsync
+
 autocmd BufWritePost *.hs  GhcModCheckAsync
 autocmd BufWritePost *.lhs GhcModCheckAsync
 
 "if has('gui_running')
 "    syntax enable
-"    set background=dark
+"    set background=light
 "    colorscheme solarized
 "endif
+
+
+
+let g:neocomplcache_enable_at_startup = 1
+
+" Bind Ctrl-e to toggle the error list. Bliss.
+" http://stackoverflow.com/questions/17512794/toggle-error-location-panel-in-syntastic
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+
+nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
+
+
+let g:vim_markdown_folding_disabled=1
+
+let g:necoghc_debug=1

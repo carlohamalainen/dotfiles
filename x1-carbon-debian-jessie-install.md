@@ -66,7 +66,14 @@ Update:
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
                          libhdf5-serial-dev btrfs-tools emacs24 beep openjdk-7-jdk autoconf    \
                          python-appindicator libappindicator3-1 libappindicator3-dev           \
-                         gir1.2-appindicator3-0.1 llvm libgc-dev
+                         gir1.2-appindicator3-0.1 llvm libgc-dev ocaml camlp5                  \
+                         liblablgtk2-ocaml-dev liblablgtk2-gl-ocaml-dev                        \
+                         liblablgtk-extras-ocaml-dev liblablgtksourceview2-ocaml-dev           \
+                         liblablgtkmathview-ocaml-dev hevea texlive-fonts-recommended          \
+                         texlive-latex-extra texlive-math-extra libav-tools normalize-audio
+
+
+
 
     sudo apt-get install ghc ghc-doc ghc-haddock ghc-prof haskell-doc haskell-platform \
                          haskell-platform-doc libghc-mtl-prof libghc-primitive-prof \
@@ -252,6 +259,8 @@ Some of the cabal defaults are [inappropriate](http://www.vex.net/~trebla/haskel
 
     sed -i 's/-- documentation: False/documentation: True/g'         ~/.cabal/config
     sed -i 's/-- library-profiling: False/library-profiling: True/g' ~/.cabal/config
+
+    sed -i 's/-- jobs:/jobs: $ncpus/g' ~/.cabal/config
 
 Now install the latest cabal:
 
