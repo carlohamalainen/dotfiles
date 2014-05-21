@@ -22,6 +22,8 @@ Add these lines to ```~/.vimrc``` to enable Pathogen:
     syntax on
     filetype plugin indent on
 
+Now extensions/plugins can be installed by cloning the relevant git repository into a subdirectory of ```~/.vim/bundle```. Easy!
+
 ### VimShell
 
 Homepage: https://github.com/Shougo/vimshell.vim
