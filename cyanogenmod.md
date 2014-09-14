@@ -86,14 +86,13 @@ Logging in can be slow (over ssh) because the ssh daemon tries to do a reverse D
 First, in a terminal in the phone, check the IP address using ```ifconfig```.
 
 Then, ```ssh root@a.b.c.d```. You will find the Android file
-system automounted, for example the downloads directory is at
-```/mnt/shell/emulated/0/Download```.
+system automounted, for example the downloads directory is at ```/mnt/shell/emulated/0/Download```.
 
 Now you can do all the usual ssh things like adding passwordless login using ```authorized_keys```.
 
 I added this entry for my phone, as it has a fixed IP address at home:
 
-```$HOME/.ssh/config```:
+ ```$HOME/.ssh/config```:
 
     host samsung-s3-at-home
         Hostname 192.168.1.3
