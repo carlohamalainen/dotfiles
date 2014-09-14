@@ -65,7 +65,7 @@ I used the Android Developers Kit, ```adt-bundle-linux-x86_64-20130729.zip``` to
 
 ## Install F-Droid
 
-Visit https://f-droid.org/ and download the APK. You have to enable unauthorised APKs.
+On the phone, visit https://f-droid.org/ and download the APK. You have to enable unauthorised APKs.
 
 ## Install Lil' Debian
 
