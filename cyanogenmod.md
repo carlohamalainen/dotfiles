@@ -59,6 +59,8 @@ which were solved by formatting
 
 ## Push CyanogenMod
 
+I used the Android Developers Kit, ```adt-bundle-linux-x86_64-20130729.zip``` to get the ```adb``` command.
+
     sudo ./adt-bundle-linux-x86_64-20130729/sdk/platform-tools/adb push cm-10.2.0-i9300.zip /sdcard/
 
 ## Install F-Droid
