@@ -8,11 +8,11 @@ You can brick your phone. Take care.
 
 ## Debian prerequisites
 
-sudo apt-get install libudev1 libudev-dev                   \
-                     libusb-1.0-0 libusb-1.0-0-dev          \
-                     build-essential pkg-config zlib1g-dev  \
-                     libusb-dev libqt4-dev qt4-qmake        \
-                     autoconf libtool libusb-1.0-0-dev
+    sudo apt-get install libudev1 libudev-dev                   \
+                         libusb-1.0-0 libusb-1.0-0-dev          \
+                         build-essential pkg-config zlib1g-dev  \
+                         libusb-dev libqt4-dev qt4-qmake        \
+                         autoconf libtool libusb-1.0-0-dev
 
 ## Heimdall
 
