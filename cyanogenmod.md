@@ -72,7 +72,7 @@ On the phone, visit https://f-droid.org/ and download the APK. You have to enabl
 In the F-Droid app, search for
 [Lil' Debian](https://f-droid.org/repository/browse/?fdfilter=debian&fdid=info.guardianproject.lildebi).
 
-Open a terminal in Lil' Debian and install ```net-tools``` for ```ifconfig:
+Open a terminal in Lil' Debian and install ```net-tools``` for ```ifconfig```:
 
     apt-get install net-tools
 
