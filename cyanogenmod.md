@@ -90,9 +90,7 @@ system automounted, for example the downloads directory is at ```/mnt/shell/emul
 
 Now you can do all the usual ssh things like adding passwordless login using ```authorized_keys```.
 
-I added this entry for my phone, as it has a fixed IP address at home:
-
- ```$HOME/.ssh/config```:
+I added this entry for my phone, as it has a fixed IP address at home: ```$HOME/.ssh/config```:
 
     host samsung-s3-at-home
         Hostname 192.168.1.3
