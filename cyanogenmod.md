@@ -12,11 +12,15 @@ You can brick your phone. Take care.
                          libusb-1.0-0 libusb-1.0-0-dev          \
                          build-essential pkg-config zlib1g-dev  \
                          libusb-dev libqt4-dev qt4-qmake        \
-                         autoconf libtool libusb-1.0-0-dev
+                         autoconf libtool libusb-1.0-0-dev      \
+                         qt5-default
 
 ## Heimdall
 
     git clone git://github.com/Benjamin-Dobell/Heimdall.git
+
+Old build instructions:
+
     cd Heimdall/libpit
     ./autogen.sh
     ./configure
@@ -30,6 +34,14 @@ You can brick your phone. Take care.
     qmake-qt4 heimdall-frontend.pro
     make
     sudo su -c 'make install'
+
+New build instructions (not tested):
+
+    cd Heimdall
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release ..
+    make
 
 After installing Heimdall, reset udev or reboot.
 
@@ -45,6 +57,10 @@ Now flash the recovery clockwork image:
 
     sudo heimdall flash --RECOVERY recovery-clockwork-touch-6.0.3.1-i9300.img --no-reboot
 
+Newer:
+
+    sudo ./Heimdall/build/bin/heimdall flash --RECOVERY recovery-clockwork-touch-6.0.4.6-i9300.img --no-reboot
+
 ## Boot into recovery mode
 
 Unplug from USB and boot ClockworkMod recovery mode by holding Home, Volume Up, and Power.
@@ -59,13 +75,21 @@ which were solved by formatting
 
 ## Push CyanogenMod
 
-I used the Android Developers Kit, ```adt-bundle-linux-x86_64-20130729.zip``` to get the ```adb``` command.
+Some time in the last year or so Google removed the ADT download from the Android Developers site. For shame.
+
+How long will this link work?
+
+    wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip
+
+Push cyanogenmod:
 
     sudo ./adt-bundle-linux-x86_64-20130729/sdk/platform-tools/adb push cm-10.2.0-i9300.zip /sdcard/
 
-## Install F-Droid
+Or, push slim and fdroid:
 
-On the phone, visit https://f-droid.org/ and download the APK. You have to enable unauthorised APKs.
+    sudo ./adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push FDroid.apk                                        /sdcard/
+    sudo ./adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push Slim-Addons-mini_gapps.4.4.4.build.9-20150107.zip /sdcard/
+    sudo ./adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push Slim-i9300-4.4.4.build.9.0-OFFICIAL-8312.zip      /sdcard/
 
 ## Install Lil' Debian
 
