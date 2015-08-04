@@ -8,9 +8,6 @@ set incsearch
 set visualbell
 set autoindent
 
-iab malmo Malmö
-iab Malmo Malmö
-
 iab pp <p>
 iab cpp </p>
 
@@ -58,10 +55,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" hdevtools
-" au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-" au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-
 " Tell syntastic to pyflakes for Python files.
 let g:syntastic_python_checkers = ['pyflakes']
 
@@ -93,7 +86,8 @@ au FileType lhaskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 
 " let g:ghcmod_browser = '/usr/bin/iceweasel'
-let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
+" let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
+" let g:ghcimportedfrom_browser = '/opt/firefox/firefox'
 
 " let g:ghcimportedfrom_ghc_options    = ['-blap']
 " let g:ghcimportedfrom_ghcpkg_options = ['--global', '--package-db=/home/carlo/work/github/ghc-imported-from/.cabal-sandbox/x86_64-linux-ghc-7.6.3-packages.conf.d']
@@ -103,14 +97,6 @@ let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 
 autocmd BufWritePost *.hs  GhcModCheckAsync
 autocmd BufWritePost *.lhs GhcModCheckAsync
-
-"if has('gui_running')
-"    syntax enable
-"    set background=light
-"    colorscheme solarized
-"endif
-
-
 
 let g:neocomplcache_enable_at_startup = 1
 
@@ -131,3 +117,8 @@ nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 let g:vim_markdown_folding_disabled=1
 
 let g:necoghc_debug=1
+
+" https://github.com/aloiscochard/codex#codex
+set tags=tags;/,codex.tags;/
+
+"set guifont=Monospace\ 14
