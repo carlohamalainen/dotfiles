@@ -10,8 +10,10 @@ sleep 1
 
 nm-applet --sm-disable &
 
+/usr/bin/seafile-applet &
+
 mate-power-manager &
 
 mate-screensaver &
 
-dropbox start &
+# dropbox start &

@@ -70,7 +70,8 @@ Update:
                          liblablgtk2-ocaml-dev liblablgtk2-gl-ocaml-dev                        \
                          liblablgtk-extras-ocaml-dev liblablgtksourceview2-ocaml-dev           \
                          liblablgtkmathview-ocaml-dev hevea texlive-fonts-recommended          \
-                         texlive-latex-extra texlive-math-extra libav-tools normalize-audio
+                         texlive-latex-extra texlive-math-extra libav-tools normalize-audio    \
+                         cmake network-manager-vpnc sqlitebrowser mediainfo pwgen
 
 
 
@@ -375,7 +376,8 @@ Add a symlink so that it works with .lhs files as well:
     cd build
 
     ccmake ..  # hit 'c'
-               # go down to MT_BUILD_SHARED_LIBS, hit enter to turn 'ON'
+               # go down to MT_BUILD_SHARED_LIBS,  hit enter to turn 'ON'
+               # go down to MT_BUILD_VISUAL_TOOLS, hit enter to turn 'ON'
                # hit 'c'
                # hit 'g'
                #
