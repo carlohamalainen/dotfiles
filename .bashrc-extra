@@ -1,27 +1,27 @@
 #!/bin/bash
 
+# All history forever, with nice dates.
+export HISTSIZE="" # http://superuser.com/a/479727
+export HISTTIMEFORMAT='%F %T '
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+
 export PATH=$PATH:$HOME/work/github/dotfiles/bin
 
 # Minc widgets from: https://github.com/BIC-MNI/minc-widgets
-export PATH=$PATH:/scratch/minc-widgets/mincbigaverage:/scratch/minc-widgets/mincnorm:/scratch/minc-widgets/volflip:/scratch/minc-widgets/nlpfit:/scratch/minc-widgets/xfmflip:/scratch/minc-widgets/volsymm:/scratch/minc-widgets/volalign:/scratch/minc-widgets/volcentre:/scratch/minc-widgets/xfmavg
+# export PATH=$PATH:/scratch/minc-widgets/mincbigaverage:/scratch/minc-widgets/mincnorm:/scratch/minc-widgets/volflip:/scratch/minc-widgets/nlpfit:/scratch/minc-widgets/xfmflip:/scratch/minc-widgets/volsymm:/scratch/minc-widgets/volalign:/scratch/minc-widgets/volcentre:/scratch/minc-widgets/xfmavg
+
+# export PATH=$PATH:/scratch/minc-widgets/gennlxfm:/scratch/minc-widgets/mincbigaverage:/scratch/minc-widgets/mincnorm:/scratch/minc-widgets/nlpfit:/scratch/minc-widgets/volalign:/scratch/minc-widgets/volcentre:/scratch/minc-widgets/volextents:/scratch/minc-widgets/volflip:/scratch/minc-widgets/voliso:/scratch/minc-widgets/volpad:/scratch/minc-widgets/volsymm:/scratch/minc-widgets/xfmavg:/scratch/minc-widgets/xfmdecomp:/scratch/minc-widgets/xfmflip
 
 alias a='ack-grep --pager="less -R" --color-match=red --color-lineno=black --color-filename=yellow'
-alias m='mplayer'
-
-# alias skype='PULSE_LATENCY_MSEC=30 skype'
-
-alias cdchecker='cd /home/carlo/work/github/checker'
-alias cdcliyesod='cd /home/carlo/work/github/cli-yesod-blog/blog/'
-alias cdghcimportedfrom='cd /home/carlo/work/github/ghc-imported-from/'
-
 
 alias ci='cabal install --haddock-hyperlink-source'
 
-alias tm='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/marble.sh; echo "tray and marble"'
-alias tu='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/unmarble.sh; echo "tray and unmarble"'
+# alias tm='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/marble.sh; echo "tray and marble"'
+# alias tu='$HOME/work/github/dotfiles/bin/tray_and_gnome_session.sh &> /dev/null; $HOME/unmarble.sh; echo "tray and unmarble"'
 
-alias mm='$HOME/marble.sh'
-alias um='$HOME/unmarble.sh'
+# alias mm='$HOME/marble.sh'
+# alias um='$HOME/unmarble.sh'
 
 alias ls='ls --color=auto'
 alias d='ls -lh'
@@ -30,16 +30,14 @@ alias f='find . -iname '
 
 export EDITOR=vim
 
-# All history forever!
-export HISTSIZE=20000
-shopt -s histappend
-export HISTTIMEFORMAT="%F %T "
-export PROMPT_COMMAND='history -a'
-
 # Bash completion
 if [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
+    . /etc/bash_completion
 fi
+
+# Normal prompt. Going into a git-annex repo with the
+# ultimate-git-ps1-bash-prompt can take forever.
+alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '"
 
 # Heaps of colours, copied from http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 
@@ -157,10 +155,3 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[04;38;5;146m") \
             man "$@"
 }
-
-
-
-# http://ro-che.info/articles/2014-03-05-cabal-sandbox-tips.html
-. ~/work/github/ghc_sandbox/ghc_sandbox.sh
-
-export PATH=$PATH:$HOME/opt/idris/Idris-dev/.cabal-sandbox/bin/
