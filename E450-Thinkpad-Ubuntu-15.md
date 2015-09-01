@@ -50,7 +50,7 @@ https://bugs.launchpad.net/xserver-xorg-video-intel/+bug/1432194
 
 https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1452318
 
-Upgrade to 4.2 kernel (seems to have fixed suspend and wifi issues):
+Upgrade to 4.2 kernel - wifi seems better but now suspend and resume are broken. Brilliant.
 
 Visited http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.2-unstable/
 and installed these packages:
