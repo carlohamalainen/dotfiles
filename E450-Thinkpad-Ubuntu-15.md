@@ -42,7 +42,7 @@ Quoting directly:
 
     Always start amdccle with sudo when switching graphic cards.
 
-## 4.2 kernel
+## 4.1 kernel
 
 The 3.19 kernel had issues with waking from suspend (garbled fonts) and sometimes unstable wifi...
 
@@ -50,14 +50,16 @@ https://bugs.launchpad.net/xserver-xorg-video-intel/+bug/1432194
 
 https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1452318
 
-Upgrade to 4.2 kernel - wifi seems better but now suspend and resume are broken. Brilliant.
+The 4.2 kernel didn't work either.
 
-Visited http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.2-unstable/
+The 4.1 kernel seems to be ok:
+
+Visited http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.1-unstable
 and installed these packages:
 
-    linux-headers-4.2.0-040200_4.2.0-040200.201508301530_all.deb
-    linux-headers-4.2.0-040200-generic_4.2.0-040200.201508301530_amd64.deb
-    linux-image-4.2.0-040200-generic_4.2.0-040200.201508301530_amd64.deb
+    linux-headers-4.1.6-040106_4.1.6-040106.201508170230_all.deb
+    linux-headers-4.1.6-040106-generic_4.1.6-040106.201508170230_amd64.deb
+    linux-image-4.1.6-040106-generic_4.1.6-040106.201508170230_amd64.deb
 
 ## Haskell
 
