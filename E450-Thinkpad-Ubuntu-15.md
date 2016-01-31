@@ -1,4 +1,4 @@
-# Ubuntu 15 on Lenovo E450 Thinkpad
+# Ubuntu 15.10 on Lenovo E450 Thinkpad
 
 ## Hibernation
 
@@ -16,50 +16,15 @@ Create the file ```/etc/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.p
     Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
     ResultActive=yes
 
-## Change video card
+## 4.3 kernel
 
-http://community.linuxmint.com/tutorial/view/1501
+The 4.2 kernel didn't manage to suspend (went to 100% CPU).
 
-Quoting directly:
+Use the 4.3 kernel from http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/
 
-    sudo apt-get install fglrx fglrx-amdcccle fglrx-pxpress
-
-    After restart you can see that Radeon card is active with this:
-
-    inxi -G
-
-    Now we need AMD Catalyst Center for switching graphic cards:
-
-    sudo apt-get install fglrx-amdcccle
-
-    sudo reboot
-
-    After reboot start AMD Catalyst Center with this:
-
-    sudo amdcccle
-
-    And change graphic to Integrated to see if everything works.
-
-    Always start amdccle with sudo when switching graphic cards.
-
-## 4.1 kernel
-
-The 3.19 kernel had issues with waking from suspend (garbled fonts) and sometimes unstable wifi...
-
-https://bugs.launchpad.net/xserver-xorg-video-intel/+bug/1432194
-
-https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/1452318
-
-The 4.2 kernel didn't work either.
-
-The 4.1 kernel seems to be ok:
-
-Visited http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.1-unstable
-and installed these packages:
-
-    linux-headers-4.1.6-040106_4.1.6-040106.201508170230_all.deb
-    linux-headers-4.1.6-040106-generic_4.1.6-040106.201508170230_amd64.deb
-    linux-image-4.1.6-040106-generic_4.1.6-040106.201508170230_amd64.deb
+    linux-headers-4.3.0-040300_4.3.0-040300.201511020949_all.deb
+    linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
+    linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 
 ## Haskell
 
@@ -71,9 +36,9 @@ Add the PPA:
 
 Install the latest:
 
-    sudo apt-get install ghc-7.10.2 ghc-7.10.2-prof ghc-7.10.2-dyn ghc-7.10.2-htmldocs
+    sudo apt-get install ghc-7.10.3 ghc-7.10.3-prof ghc-7.10.3-dyn ghc-7.10.3-htmldocs
 
-Add ```/opt/ghc/7.10.2/bin``` to ```$PATH```. Open a new terminal.
+Add ```/opt/ghc/7.10.3/bin``` to ```$PATH```. Open a new terminal.
 
 Newer cabal:
 
@@ -127,3 +92,33 @@ Open ```app/Main.hs``` in Vim and try ```:GhcModType``` on something.
 ### ghc-imported-from
 
 TODO
+
+# BLAH
+
+## Change video card
+
+http://community.linuxmint.com/tutorial/view/1501
+
+Quoting directly:
+
+    sudo apt-get install fglrx fglrx-amdcccle fglrx-pxpress
+
+    After restart you can see that Radeon card is active with this:
+
+    inxi -G
+
+    Now we need AMD Catalyst Center for switching graphic cards:
+
+    sudo apt-get install fglrx-amdcccle
+
+    sudo reboot
+
+    After reboot start AMD Catalyst Center with this:
+
+    sudo amdcccle
+
+    And change graphic to Integrated to see if everything works.
+
+    Always start amdccle with sudo when switching graphic cards.
+
+
