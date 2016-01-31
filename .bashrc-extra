@@ -24,7 +24,7 @@ alias ci='cabal install --haddock-hyperlink-source'
 # alias um='$HOME/unmarble.sh'
 
 alias ls='ls --color=auto'
-alias d='ls -lh'
+alias d='ls -lh --time-style long-iso'
 
 alias f='find . -iname '
 
