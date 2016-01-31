@@ -95,8 +95,8 @@ au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 " autocmd BufWritePost *.hs  GhcModCheckAndLintAsync
 " autocmd BufWritePost *.lhs GhcModCheckAndLintAsync
 
-autocmd BufWritePost *.hs  GhcModCheckAsync
-autocmd BufWritePost *.lhs GhcModCheckAsync
+"autocmd BufWritePost *.hs  GhcModCheckAsync
+"autocmd BufWritePost *.lhs GhcModCheckAsync
 
 let g:neocomplcache_enable_at_startup = 1
 
