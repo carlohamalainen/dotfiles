@@ -37,10 +37,10 @@ The above doesn't work if two volumes (e.g. internal hard drive and USB drive) h
 
 First use `vgdisplay` to see the UUIDs:
 
-    # vgdisplay 
+    # vgdisplay
       --- Volume group ---
       VG Name               ubuntu-vg
-      System ID             
+      System ID
       Format                lvm2
       Metadata Areas        1
       Metadata Sequence No  3
@@ -58,10 +58,10 @@ First use `vgdisplay` to see the UUIDs:
       Alloc PE / Size       119161 / 465.47 GiB
       Free  PE / Size       11 / 44.00 MiB
       VG UUID               1DIDQ9-ZNHC-voA1-rSoH-jxkP-Lj6z-GYPgOn
-       
+
       --- Volume group ---
       VG Name               ubuntu-vg
-      System ID             
+      System ID
       Format                lvm2
       Metadata Areas        1
       Metadata Sequence No  3
