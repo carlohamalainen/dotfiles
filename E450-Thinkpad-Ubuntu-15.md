@@ -122,3 +122,11 @@ Quoting directly:
     Always start amdccle with sudo when switching graphic cards.
 
 
+
+
+
+
+# BlogLiterately
+
+    sudo apt-get install libcrypto++-dev  libssl-dev
+    cabal install BlogLiterately
