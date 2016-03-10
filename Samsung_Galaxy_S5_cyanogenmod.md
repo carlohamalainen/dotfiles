@@ -34,16 +34,18 @@ Boot to recovery ROM:
 
 Use twrp's interface to do a factory reset (wipe).
 
-
 Push to the device:
 
-    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push cm-12.1-20150813-NIGHTLY-klte.zip cm-12.1-20150721-BAREBONES-klte.zip /sdcard/
-    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push gapps-5.1-2015-07-03-13-41.zip /sdcard/
-    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push CM_Fixed_Camera_for_CM_All_AOSP_roms_by_RohanAJoshi_V5.0.zip /sdcard/
+    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push \
+            cm-13.0-20160309-NIGHTLY-klte.zip /sdcard/
 
-Use interface to install ```cm-12.1-20150813-NIGHTLY-klte.zip``` and then reboot.
+    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push \
+            FDroid.apk /sdcard/
 
-Use interface to install ```gapps-5.1-2015-07-03-13-41.zip``` and then reboot.
+    sudo adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb push \
+            CM_Fixed_Camera_for_CM_All_AOSP_roms_by_RohanAJoshi_V5.0.zip /sdcard/
+
+Use interface to install ```cm-*-klte.zip``` and then reboot.
 
 Use interface to install ```CM_Fixed_Camera_for_CM_All_AOSP_roms_by_RohanAJoshi_V5.0.zip``` and then reboot.
 
@@ -54,8 +56,8 @@ The CM_Fixed_Camera sorts out the "camera disconnected" errors that plague Cyano
     0a950b76300eb520cfabdcb6b55e0a9d  twrp-2.8.7.0-klte.img
     18a7c5778f96c0823349d465f58a0a36  adt-bundle-linux-x86_64-20140702.zip
 
-    f5557b52720b8ee84a3ac7d83cc30b19  cm-12.1-20150813-NIGHTLY-klte.zip
-    7301dbab84fa44dafffdb74af06bc40b  gapps-5.1-arm-2015-07-17-13-29.zip
+    caf386eb2ecb7159015e5cba7d7bd8cc  FDroid.apk
+    c0afc7de1a4217ec5f227de80e5623c1  cm-13.0-20160309-NIGHTLY-klte.zip
     fbf99c41c6bd8a970ccea859c1a05470  CM_Fixed_Camera_for_CM_All_AOSP_roms_by_RohanAJoshi_V5.0.zip
 
 ## Other things
