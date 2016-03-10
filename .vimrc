@@ -122,3 +122,9 @@ let g:necoghc_debug=1
 set tags=tags;/,codex.tags;/
 
 "set guifont=Monospace\ 14
+
+
+" https://github.com/ctrlpvim/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
