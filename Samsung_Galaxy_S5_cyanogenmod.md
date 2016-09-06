@@ -6,6 +6,12 @@ I tried XtreStoLite but couldn't get encryption to work. Not sure why. Reverted 
 
 If you stuff this up you will brick your phone. Be careful.
 
+## Notes
+
+* Cyanogen 12.x has "camera disconnected" bug; needs ```CM_Fixed_Camera_for_CM_All_AOSP_roms_by_RohanAJoshi_V5```.
+* Cyanogen 13.x has scratchy audio in Firefox/Chrome (e.g. bandcamp.com).
+* Both 12.x and 13.x have an overheating problem with NFC (see note on how to disable).
+
 ## Prerequisites
 
 On Ubuntu 15, I built Heimdall from source, up to this commit:
