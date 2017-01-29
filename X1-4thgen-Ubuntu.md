@@ -41,11 +41,11 @@ Add ```$HOME/.cabal/bin``` to front of ```$PATH```.
                          cryptsetup pavucontrol screen durep baobab keepassx xinput htop       \
                          transmission-gtk gnupg2 vlc mplayer                                   \
                          calibre conky-all geeqie libjpeg-progs                                \
-                         tcsh inkscape mpop flac moreutils xchat-gnome tcl-tclreadline         \
+                         tcsh inkscape mpop flac moreutils tcl-tclreadline                     \
                          genisoimage gitk rdiff-backup unrar ffmpeg wmctrl exiftags            \
                          iotop audacity pdftk                                                  \
                          kino vorbis-tools ffmpeg2theora iftop pdf2djvu cpphs parted           \
-                         libgetopt-tabular-perl libzmq-dev python-zmq libblas-dev libblas3     \
+                         libgetopt-tabular-perl libblas-dev libblas3                           \
                          liblapack-dev liblapack3 fort77 gfortran gfortran-multilib ack-grep   \
                          libdata-dump-perl libdata-printer-perl stress winpdb strace djview    \
                          libhdf5-serial-dev btrfs-tools emacs24 beep autoconf                  \
@@ -61,7 +61,9 @@ Add ```$HOME/.cabal/bin``` to front of ```$PATH```.
                          mate-desktop-environment-core                                         \
                          mate-desktop-environment-extra                                        \
                          mate-desktop-environment-extras                                       \
-                         xsel rsnapshot
+                         xsel rsnapshot vim-gtk3                                               \
+                         pcscd scdaemon gnupg2 gpgsm pcsc-tools yubikey-personalization-gui    \
+                         yubikey-neo-manager yubikey-personalization scdaemon
 
     sudo apt-get install apt-file
     sudo apt-file update
