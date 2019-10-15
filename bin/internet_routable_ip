@@ -1,3 +1,0 @@
-#!/bin/bash
-
-curl -s ip\.nu | egrep --color=no -o '[0-9\.]+'
