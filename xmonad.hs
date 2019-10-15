@@ -22,6 +22,6 @@ main = do
         , ((controlMask, xK_F9), spawn "nautilus")
         , ((controlMask, xK_F10), spawn "thunderbird")
         , ((controlMask, xK_F11), spawn "mate-terminal")
-        , ((controlMask, xK_F12), spawn "chromium-browser")
+        , ((controlMask, xK_F12), spawn "firefox")
         ] `removeKeysP`
-        [ "M-e" ]
+        [ "M-e", "M-q" ]

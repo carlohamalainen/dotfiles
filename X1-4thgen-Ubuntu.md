@@ -1,5 +1,10 @@
 # Ubuntu 16.04 on Lenovo X1 Carbon (4th gen)
 
+## Workspaces in Ubuntu 17
+
+    gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 9
+    gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 1
+
 ## 4.4 kernel
 
 Install linux-image and linux-headers from http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.14-xenial
@@ -63,7 +68,7 @@ Add ```$HOME/.cabal/bin``` to front of ```$PATH```.
                          mate-desktop-environment-extras                                       \
                          xsel rsnapshot vim-gtk3                                               \
                          pcscd scdaemon gnupg2 gpgsm pcsc-tools yubikey-personalization-gui    \
-                         yubikey-neo-manager yubikey-personalization scdaemon
+                         yubikey-neo-manager yubikey-personalization scdaemon hashalot
 
     sudo apt-get install apt-file
     sudo apt-file update

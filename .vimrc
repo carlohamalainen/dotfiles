@@ -1,3 +1,34 @@
+" :PlugInstall
+" :PlugUpgrade
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
+Plug 'Shougo/vimproc.vim', 	                    { 'do': 'make' }
+"Plug 'eagletmt/ghcmod-vim',                     {'for': 'haskell'}
+Plug 'eagletmt/neco-ghc'
+"Plug 'carlohamalainen/ghcimportedfrom-vim',     {'for': 'haskell'}
+Plug 'neovim/python-client'
+Plug 'zchee/deoplete-jedi'
+Plug 'kien/ctrlp.vim'
+
+Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'haskell'  }
+Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'lhaskell' }
+
+
+"Plug 'Twinside/vim-hoogle',    {'for': 'haskell'}
+"Plug 'janko-m/vim-test'
+"Plug 'raichoo/haskell-vim',    {'for': 'haskell'}
+
+function! DoRemote(arg)
+    UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+call plug#end()
+
+
 syntax on
 
 set softtabstop=4
@@ -5,11 +36,11 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set incsearch
-set visualbell
+"set visualbell
 set autoindent
 
-iab pp <p>
-iab cpp </p>
+"iab pp <p>
+"iab cpp </p>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -20,7 +51,7 @@ iab cpp </p>
 :set whichwrap=b,s,h,l
 
 " Don't annoy my neighbours (visual bell)
-set vb
+" set vb
 
 " Usually search case insensitive
 set ignorecase
@@ -48,13 +79,6 @@ set synmaxcol=40000
 " map <F9> :!rubber --pdf -o natbib %:r <CR>
 map <F9> :!./go <CR>
 
-
-" For Haskell stuff: pathogen for modules, e.g. syntastic, ghcmod-vim, ...
-" https://github.com/tpope/vim-pathogen/
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
 " Tell syntastic to pyflakes for Python files.
 let g:syntastic_python_checkers = ['pyflakes']
 
@@ -65,17 +89,18 @@ let g:syntastic_check_on_open=1
 highlight SyntasticError   ctermfg=red
 highlight SyntasticWarning ctermbg=lightgrey
 
-au FileType haskell nnoremap <buffer> <F4> :GhcImportedFromOpenHaddock<CR>
-au FileType lhaskell nnoremap <buffer> <F4> :GhcImportedFromOpenHaddock<CR>
 
-au FileType haskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
-au FileType lhaskell nnoremap <buffer> <F5> :GhcImportedFromEchoUrl<CR>
+au FileType haskell nnoremap <buffer> <F4> :GhcModOpenDoc<CR>
+au FileType lhaskell nnoremap <buffer> <F4> :GhcModOpenDoc<CR>
 
-au FileType haskell  vnoremap <S-F4> :<C-u> :GhcImportedFromOpenHaddockVismode<CR>
-au FileType lhaskell vnoremap <S-F4> :<C-u> :GhcImportedFromOpenHaddockVismode<CR>
+au FileType haskell nnoremap <buffer> <F5> :GhcModDocUrl<CR>
+au FileType lhaskell nnoremap <buffer> <F5> :GhcModDocUrl<CR>
 
-au FileType haskell  vnoremap <S-F5> :<C-u> :GhcImportedFromEchoUrlVismode<CR>
-au FileType lhaskell vnoremap <S-F5> :<C-u> :GhcImportedFromEchoUrlVismode<CR>
+au FileType haskell  vnoremap <S-F4> :<C-u> :GhcModOpenHaddockVismode<CR>
+au FileType lhaskell vnoremap <S-F4> :<C-u> :GhcModOpenHaddockVismode<CR>
+
+au FileType haskell  vnoremap <S-F5> :<C-u> :GhcModEchoUrlVismode<CR>
+au FileType lhaskell vnoremap <S-F5> :<C-u> :GhcModEchoUrlVismode<CR>
 
 au FileType haskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <F2> :GhcModInfo<CR>
@@ -85,7 +110,10 @@ au FileType lhaskell nnoremap <buffer> <F1> :GhcModType<CR>
 au FileType lhaskell nnoremap <buffer> <F2> :GhcModInfo<CR>
 au FileType lhaskell nnoremap <buffer> <silent> <F3> :GhcModTypeClear<CR>
 
-" let g:ghcmod_browser = '/usr/bin/iceweasel'
+
+
+
+let g:ghcmod_browser = '/usr/bin/firefox'
 " let g:ghcimportedfrom_browser = '/usr/bin/google-chrome'
 " let g:ghcimportedfrom_browser = '/opt/firefox/firefox'
 
@@ -121,10 +149,14 @@ let g:necoghc_debug=1
 " https://github.com/aloiscochard/codex#codex
 set tags=tags;/,codex.tags;/
 
-"set guifont=Monospace\ 14
+set guifont=Monospace\ 10
 
 
 " https://github.com/ctrlpvim/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+set t_Co=256
+
+" https://stackoverflow.com/questions/21618614/vim-shows-garbage-characters
+autocmd VimEnter * redraw!

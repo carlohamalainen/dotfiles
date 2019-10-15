@@ -1,19 +1,19 @@
 sleep 2s
 
 feh --bg-fill  /usr/share/backgrounds/mate/nature/Aqua.jpg
-trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 10 --transparent true --tint 0x191970 --height 18 &
+#trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 10 --transparent true --tint 0x191970 --height 18 &
 # gnome-session &
 # mate-session &
-mate-settings-daemon &
+# mate-settings-daemon &
 
 sleep 1
 
-nm-applet --sm-disable &
+# nm-applet --sm-disable &
 
-/usr/bin/seafile-applet &
+# /usr/bin/seafile-applet &
 
-mate-power-manager &
+# mate-power-manager &
 
-mate-screensaver &
+# mate-screensaver &
 
 # dropbox start &
