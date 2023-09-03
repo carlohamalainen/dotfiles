@@ -124,6 +124,8 @@ Jobs="\j"
 
 # PS1 snippet adapted from: http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
 
+# export PS1='$(if [ $? == 0 ]; then echo "'$BIGreen'✓'$Color_Off'"; else echo "'$BIRed'✗'$Color_Off'"; fi) '$IWhite$Time12h$Color_Off' \u@\h$(export LASTSTATUS=$?; git branch &>/dev/null;\
+# export PS1='$(if [ $? == 0 ]; then echo "'$BIGreen'✓'$Color_Off'"; else echo "'$BIRed'✗'$Color_Off'"; fi) '$IBlack$Time12h$Color_Off' \u@\h$(export LASTSTATUS=$?; git branch &>/dev/null;\
 export PS1='$(if [ $? == 0 ]; then echo "'$BIGreen'✓'$Color_Off'"; else echo "'$BIRed'✗'$Color_Off'"; fi) '$IBlack$Time12h$Color_Off' \u@\h$(export LASTSTATUS=$?; git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
@@ -133,7 +135,7 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BBlack$PathShort$Color_Off' \$ "; \
+  fi) '$BOrange$PathShort$Color_Off' \$ "; \
 else \
   # @2 - Prompt when not in GIT repo
   echo " '$Black$PathShort$Color_Off' \$ "; \

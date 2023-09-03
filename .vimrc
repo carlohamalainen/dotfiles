@@ -3,19 +3,37 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
-Plug 'Shougo/vimproc.vim', 	                    { 'do': 'make' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Plug 'scrooloose/syntastic'
+"Plug 'benekastah/neomake'
+"Plug 'Shougo/vimproc.vim', 	                    { 'do': 'make' }
 "Plug 'eagletmt/ghcmod-vim',                     {'for': 'haskell'}
-Plug 'eagletmt/neco-ghc'
+"Plug 'eagletmt/neco-ghc'
 "Plug 'carlohamalainen/ghcimportedfrom-vim',     {'for': 'haskell'}
-Plug 'neovim/python-client'
-Plug 'zchee/deoplete-jedi'
+"Plug 'neovim/python-client'
+"Plug 'zchee/deoplete-jedi'
 Plug 'kien/ctrlp.vim'
+Plug 'preservim/nerdcommenter'
 
-Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'haskell'  }
-Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'lhaskell' }
 
+"Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'haskell'  }
+"Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for': 'lhaskell' }
+
+" SnipMate
+"          Plug 'MarcWeber/vim-addon-mw-utils'
+"          Plug 'tomtom/tlib_vim'
+"          Plug 'garbas/vim-snipmate'
+"          Plug 'honza/vim-snippets'
+
+
+"          Plug 'LnL7/vim-nix'
+
+"          Plug 'scrooloose/syntastic'
+
+"          Plug 'preservim/nerdcommenter'
+
+"          Plug 'junegunn/vim-peekaboo'
 
 "Plug 'Twinside/vim-hoogle',    {'for': 'haskell'}
 "Plug 'janko-m/vim-test'
@@ -24,20 +42,13 @@ Plug 'carlohamalainen/ghcmod-vim', { 'branch': 'ghcmod-imported-from-cmd', 'for'
 function! DoRemote(arg)
     UpdateRemotePlugins
 endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+"Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 call plug#end()
 
 
 syntax on
-
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set incsearch
-"set visualbell
-set autoindent
 
 "iab pp <p>
 "iab cpp </p>
@@ -60,9 +71,9 @@ set ignorecase
 set incsearch
 
 " This block maps the 'q' key to format a paragraph.
-set shell=/bin/csh redraw
-map K !} fmt -72 -c
-map U !} fmt -72 -c
+" set shell=/bin/csh redraw
+" map K !} fmt -72 -c
+" map U !} fmt -72 -c
 "map q K}
 
 set tw=0
@@ -81,6 +92,21 @@ map <F9> :!./go <CR>
 
 " Tell syntastic to pyflakes for Python files.
 let g:syntastic_python_checkers = ['pyflakes']
+
+" let g:syntastic_racket_racket_args="--load"
+let g:syntastic_racket_code_ayatollah_script = "/home/carlo/code-ayatollah.rkt"
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
 
 " Check with syntastic on open.
 let g:syntastic_check_on_open=1
@@ -160,3 +186,80 @@ set t_Co=256
 
 " https://stackoverflow.com/questions/21618614/vim-shows-garbage-characters
 autocmd VimEnter * redraw!
+
+set cryptmethod=blowfish2
+
+"colo torte
+
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set incsearch
+"set visualbell
+set autoindent
+
+
+map <Leader>d !!date '+\%d \%B \%Y'<CR>
+
+map <Leader>0 :e /home/carlo/0.txt<CR>
+
+let g:snipMate = { 'snippet_version' : 1 }
+
+
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+
+" https://github.com/neoclide/coc.nvim#example-vim-configuration
+" nmap <silent> gy <Plug>(coc-type-definition)
+
+
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
+
+nnoremap <silent> <leader>c} V}:call nerdcommenter#Comment('x', 'toggle')<CR>
+nnoremap <silent> <leader>c{ V{:call nerdcommenter#Comment('x', 'toggle')<CR>
+
+
